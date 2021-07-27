@@ -1,0 +1,146 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css	" rel="stylesheet" id="bootstrap-css">
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+{% if e==0 %}
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item text-center"> 
+            <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> </li>
+            <li class="nav-item text-center">
+             <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+			<!-- <form> -->
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				<form action="{{url_for('login')}}" method="POST">
+                <div class="form px-4 pt-5"> 
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                <input type="submit" value="Login" class="btn btn-info btn-block"> 
+                &nbsp;&nbsp;<h4 style="color:red;">** Please enter correct E-mail</h4>
+                </div>
+				</form>
+                
+            </div>
+		<!-- </form> -->
+		<!-- <form action="{{url_for('register')}}" method="POST"></form> -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				<form action="{{url_for('register')}}" method="POST">
+                <div class="form px-4"> 
+					
+				<input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name">
+				<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+				<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+				<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+				<input type="submit" value="Register" class="btn btn-info btn-block">
+				
+                 <!-- <input type="text" name="" class="form-control" placeholder="Name"> 
+                <input type="text" name="" class="form-control" placeholder="Email"> 
+                <input type="text" name="" class="form-control" placeholder="Phone"> 
+                <input type="text" name="" class="form-control" placeholder="Password"> 
+                <button class="btn btn-dark btn-block">Signup</button>  -->
+                </div>
+			</form>
+            </div>
+		<!-- </form> -->
+        </div>
+    </div>
+</div>
+{% elif p==0 %}
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item text-center"> 
+            <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> </li>
+            <li class="nav-item text-center">
+             <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+			<!-- <form> -->
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				<form action="{{url_for('login')}}" method="POST">
+                <div class="form px-4 pt-5"> 
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                <input type="submit" value="Login" class="btn btn-info btn-block"> 
+                &nbsp;&nbsp;<h4 style="color:red;">** Please enter correct Password</h4>
+                </div>
+				</form>
+               
+            </div>
+		<!-- </form> -->
+		<!-- <form action="{{url_for('register')}}" method="POST"></form> -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				<form action="{{url_for('register')}}" method="POST">
+                <div class="form px-4"> 
+					
+				<input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name">
+				<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+				<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+				<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+				<input type="submit" value="Register" class="btn btn-info btn-block">
+				
+                 <!-- <input type="text" name="" class="form-control" placeholder="Name"> 
+                <input type="text" name="" class="form-control" placeholder="Email"> 
+                <input type="text" name="" class="form-control" placeholder="Phone"> 
+                <input type="text" name="" class="form-control" placeholder="Password"> 
+                <button class="btn btn-dark btn-block">Signup</button>  -->
+                </div>
+			</form>
+            </div>
+		<!-- </form> -->
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item text-center"> 
+            <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Login</a> </li>
+            <li class="nav-item text-center">
+             <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a> </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+			<!-- <form> -->
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				<form action="{{url_for('login')}}" method="POST">
+                <div class="form px-4 pt-5"> 
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                <input type="submit" value="Login" class="btn btn-info btn-block"> 
+                </div>
+				</form>
+                
+            </div>
+		<!-- </form> -->
+		<!-- <form action="{{url_for('register')}}" method="POST"></form> -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+				<form action="{{url_for('register')}}" method="POST">
+                <div class="form px-4"> 
+					
+				<input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name">
+				<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+				<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+				<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+				<input type="submit" value="Register" class="btn btn-info btn-block">
+				
+                 <!-- <input type="text" name="" class="form-control" placeholder="Name"> 
+                <input type="text" name="" class="form-control" placeholder="Email"> 
+                <input type="text" name="" class="form-control" placeholder="Phone"> 
+                <input type="text" name="" class="form-control" placeholder="Password"> 
+                <button class="btn btn-dark btn-block">Signup</button>  -->
+                </div>
+			</form>
+            </div>
+		<!-- </form> -->
+        </div>
+    </div>
+</div>
+
+{% endif %}

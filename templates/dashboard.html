@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> 
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css	" rel="stylesheet" id="bootstrap-css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+
+<html>
+    <head>
+        <title>Details....</title>
+    </head>
+    <body align="center">
+        
+        <div class="d">
+        <a href="{{url_for('logout')}}"><b class="d">Logout</b></a></div>
+        <h2> Welcome to the Dashboard page</h2>
+        <!-- <div class="a"> -->
+        <!-- <h4> Welcome to the Dashboard page</h4> -->
+        
+
+            <!-- <li>Your first name : <b>{{f_name}}</b></li><br>
+            <li>Your last name : <b>{{l_name}}</b></li><br>  -->
+             <!-- <P>Login with <b>{{email}} </b></P><br> -->
+        <!-- </div> -->
+        <div class="b">
+            <!-- <h4>Please search for the books in below</h4> -->
+        <form action="{{url_for('dashboard')}}" method="POST">
+            <div class="form px-4 pt-5"> <br>
+            <input type="text" name="isbn" id="isbn" class="a" placeholder="Enter text">
+            <input type="submit" value="Submit" class="e"><br><br>
+            </div>
+        </form>
+        </div>
+        {% if fi>0 %}
+       <div class="c"><br>
+        <table align="center" class="table table-inverse" border = "1" width = "500" height = "150">
+            <thead>
+              <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">NAME</th>
+                <th scope="col">AUTHOR</th>
+                <th scope="col">YEAR</th>
+              </tr>
+            </thead>
+              {% for i in l %}
+              <tr>
+              <td><form method="post" action="{{url_for('bookdetails')}}" method="POST"><button name="detailbook" value={{i.isbn}}>{{i.isbn}}</button></form>
+              </td>
+              <td>{{i.name}}
+              </td>
+              <td>{{i.author}}
+              </td>
+              <td>{{i.year}}
+              </td>
+              </tr>
+              {% endfor %}
+          </table><br>
+        </div>
+          {% elif fi==0 %}
+          <p>Please enter correct ISBN</p>
+          {% endif %}
+
+
+
+
+
+        
+    
+    </body>
+</html> 
+
+
+
+
+
+<!-- 
+
+
+<html>
+    <head>
+        <title>
+            Sample Code
+        </title>
+    </head>
+    <body>
+        <p>Click hear to login with another user:  <a href="{{url_for('logout')}}">Logout</a></p>
+    </body>
+</html> --> 

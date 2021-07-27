@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Details....</title>
+    </head>
+    <body>
+        <h2> Hi {{f_name}}, Thank you for registering. </h2>
+        <p> Please check your details are correct or not in below........</p>
+        <ul>
+            <li>Your first name : <b>{{f_name}}</b></li><br>
+            <li>Your last name : <b>{{l_name}}</b></li><br>
+            <li>Your E-mail: <b>{{email}} </b></li><br>
+        </ul>
+
+        <h3>If You wanted to register again, Please click here --------> &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{url_for('register')}}">Register page</a></h3>
+    
+    </body>
+</html>

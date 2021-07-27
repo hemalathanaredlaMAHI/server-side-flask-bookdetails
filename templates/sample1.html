@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            Sample Code
+        </title>
+    </head>
+    <body>
+        {% if n|int %}
+        <h1>You entered a number</h1>
+        {% else %}
+        <p>Hello, Welcome</p>
+        <p>I am &nbsp; <b>{{n}}</b> </p>
+        <p>Currently I am pursuing 2nd in MSIT.</p>
+        <h4>{{n}} hobbies are: </h4>
+        {% for i in h %} 
+        <li>{{i}}</li><br>
+        {% endfor %}
+        {% endif %}
+        <br>
+        <p>Click hear to login with another user:  <a href="{{url_for('index')}}">Login page</a></p>
+    </body>
+</html>

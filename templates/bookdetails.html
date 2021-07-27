@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> 
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css	" rel="stylesheet" id="bootstrap-css"> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+<html>
+    <head>
+        <title>
+            sample details
+        </title>
+    </head>
+    <body align="center">
+        <div class="d">
+            <a href="{{url_for('logout')}}"><b class="d">Logout</b></a></div>
+        <div class="c"><br>
+        <table align="center" class="table table-inverse" border = "1" width = "500" height = "150">
+            <thead>
+              <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">NAME</th>
+                <th scope="col">AUTHOR</th>
+                <th scope="col">YEAR</th>
+              </tr>
+            </thead>
+              {% for i in bdetails %}
+              <tr>
+              <td>{{i.isbn}}
+              </td>
+              <td>{{i.name}}
+              </td>
+              <td>{{i.author}}
+              </td>
+              <td>{{i.year}}
+              </td>
+              </tr>
+              {% endfor %}
+          </table><br>
+          </div>
+          <br><br>
+          <div class="c">
+            <h1 align="center">Reviews</h1>
+            {% if lenlist>0 %}
+            {% for i in revlist %}
+            <li>{{i.review}}</li>
+            {% endfor %}
+            <br>
+            {% else %}
+            <li>No Reviews</li>
+            {% endif %}
+            <!-- <table align="center" class="table table-inverse" border = "1" width = "500" height = "150">
+                <thead>
+                  <tr>
+                    <th scope="col">Reviews</th>
+                  </tr>
+                </thead>
+                  {% for i in revlist %}
+                  <tr>
+                  <td>{{i.review}}
+                  </td>
+                  </tr>
+                  {% endfor %}
+              </table><br> -->
+              </div>
+          <!-- <h1>{{bdetails[0].isbn}}</h1> -->
+         
+        <!-- <a href="{{url_for('logout')}}"><b class="d">Logout</b></a> -->
+    </body>
+</html>
